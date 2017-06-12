@@ -1,7 +1,6 @@
-﻿# joelle.ruelle@smartview2.onmicrosoft.com
-
+﻿
 #Create authentification object for the user
-$credential = Get-Credential -UserName 'joelle.ruelle@smartview2.onmicrosoft.com' -Message "Enter SPO credentials"
+$credential = Get-Credential -UserName 'put your UserName here' -Message "Enter SPO credentials"
 
 #Initializing a persistent connection to Exchange
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -AllowRed
@@ -15,7 +14,7 @@ Import-PSSession $Session -AllowClobber
 #########################################################################################################################
 
 #Get user by DisplayName
-$Myuser = Get-MsolUser  | Where-Object {$_.DisplayName -eq "Joelle Ruelle"}
+$Myuser = Get-MsolUser  | Where-Object {$_.DisplayName -eq "put your user DisplayName here"}
 
 $DisplayName= “$($Myuser.DisplayName)”
 Write-Host "DisplayName -> " $DisplayName
